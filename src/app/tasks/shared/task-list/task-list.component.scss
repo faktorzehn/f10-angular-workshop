@@ -1,0 +1,13 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  app-task-card {
+    transition: scale 0.5s;
+
+    &:hover {
+      scale: 1.05;
+    }
+  }
+}

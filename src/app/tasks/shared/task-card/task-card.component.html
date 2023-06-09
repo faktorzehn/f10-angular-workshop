@@ -1,1 +1,13 @@
-<p>task-card works!</p>
+<div class="card">
+  <div class="left">
+    <h2>{{task?.title}}</h2>
+    <div class="second-row">
+      <p class="type" [style]="{'background-color': typeColor()}">{{task?.type}}</p>
+      <p>{{task?.destination}}</p>
+    </div>
+  </div>
+  <div class="right">
+    {{task?.gold}}
+    <img src="assets/coin.png" alt="Gold">
+  </div>
+</div>

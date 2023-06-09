@@ -1,1 +1,3 @@
-<p>task-list works!</p>
+<div class="list">
+  <app-task-card *ngFor="let t of tasks; trackBy: trackById" [task]="t"></app-task-card>
+</div>

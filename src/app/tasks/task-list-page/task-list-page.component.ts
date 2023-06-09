@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Task } from '../shared/task.model';
 import { TasksService } from 'src/app/core/tasks.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Router } from '@angular/router';
 
 
 /**
@@ -18,7 +19,7 @@ export class TaskListPageComponent {
   tasks?: Task[];
   sortByCoin?: 'UP' | 'DOWN';
 
-  constructor(tasksService: TasksService) {
+  constructor(tasksService: TasksService, private router: Router) {
     tasksService.getAll().pipe(takeUntilDestroyed()).subscribe(t => {
       this.tasks = t;
       this.sortTasks(this.sortByCoin);
@@ -47,5 +48,9 @@ export class TaskListPageComponent {
     } else {
       this.tasks?.sort((t1, t2)=>t2.priority-t1.priority);
     }
+  }
+
+  navigateTo(task: Task) {
+    this.router.navigate(['/tasks', task.id]);
   }
 }

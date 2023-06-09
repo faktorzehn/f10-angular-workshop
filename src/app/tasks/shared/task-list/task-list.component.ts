@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from '../task.model';
 
 @Component({
@@ -9,6 +9,7 @@ import { Task } from '../task.model';
 export class TaskListComponent {
 
   @Input() tasks?: Task[];
+  @Output() byClick = new EventEmitter<Task>();
 
   /**
    * Eine trackBy Funktion hilft Anuglar bei einem *ngFor die Liste effizient zu rendern.

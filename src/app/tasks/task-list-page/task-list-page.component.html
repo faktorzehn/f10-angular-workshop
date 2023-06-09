@@ -5,5 +5,8 @@
     <img src="assets/coin.png" alt="Gold">
   </button>
 </div>
-<app-task-list [tasks]="tasks" *ngIf="tasks"></app-task-list>
+<app-task-list [tasks]="tasks" *ngIf="tasks" (byClick)="navigateTo($event)"></app-task-list>
+<div class="button-container">
+  <button class="add-button" [routerLink]="['/tasks','new']">Hinzufügen</button>
+</div>
 <div *ngIf="!tasks">...loading</div>

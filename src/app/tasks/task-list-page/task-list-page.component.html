@@ -1,2 +1,9 @@
 <h1>Tasks</h1>
+<div class="filter-bar">
+  <button (click)="onSortByCoin()">
+    <img id="arrow" src="assets/down-filled-triangular-arrow.png" *ngIf="sortByCoin" [ngStyle]="{'rotate': (sortByCoin==='UP') ? '180deg': '0deg'}" alt="sortier-pfeil">
+    <img src="assets/coin.png" alt="Gold">
+  </button>
+</div>
 <app-task-list [tasks]="tasks" *ngIf="tasks"></app-task-list>
+<div *ngIf="!tasks">...loading</div>

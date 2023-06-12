@@ -1,3 +1,39 @@
-{{id}}
+<div class="title-container" [routerLink]="['/tasks']">
+  <img src="assets/left-arrow.png" alt="go back">
+  <h1>{{form.value.title}}</h1>
+</div>
+<form [formGroup]="form" *ngIf="form">
+  <app-field label="Titel*" [error]="getError('title')" inputId="title">
+    <input formControlName="title" id="title">
+  </app-field>
 
-<pre>{{task |json }}</pre>
+  <app-field label="Beschreibung" [error]="getError('description')" inputId="description">
+    <textarea formControlName="description" id ="description"></textarea>
+  </app-field>
+
+  <app-field label="Typ*" [error]="getError('typ')" inputId="typ">
+    <select formControlName="type" id="typ">
+      <option value="suchen">suchen</option>
+      <option value="entern">entern</option>
+      <option value="erpressen">erpressen</option>
+    </select>
+  </app-field>
+
+  <app-field label="Ort*" [error]="getError('destination')" inputId="destination">
+    <input formControlName="destination" id="ort">
+  </app-field>
+
+  <app-field label="Gold" [error]="getError('gold')" inputId="gold">
+    <input formControlName="gold" type="number" id="gold">
+  </app-field>
+
+  <app-field label="Priorität" [error]="getError('priority')" inputId="priority">
+    <input formControlName="priority" type="number" id="prioritaet">
+  </app-field>
+
+  <button type="submit" [disabled]="!canSave()" (click)="save()">Speichern</button>
+</form>
+
+<div *ngIf="!form">
+  loading
+</div>

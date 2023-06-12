@@ -21,4 +21,12 @@ export class TasksService {
   getOne(id: string): Observable<Task> {
     return this.http.get<Task>(`${environment.BACKEND}/tasks/${id}`);
   }
+
+  update(task: Task) {
+    return this.http.put<Task>(`${environment.BACKEND}/tasks/${task.id}`, task);
+  }
+
+  create(task: Task) {
+    return this.http.post<Task>(`${environment.BACKEND}/tasks/`, task);
+  }
 }

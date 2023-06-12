@@ -1,6 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { Task } from '../task.model';
 
+/**
+ * Stell ein einzelnen Task als "Karte" dar.
+ */
 @Component({
   selector: 'app-task-card',
   templateUrl: './task-card.component.html',

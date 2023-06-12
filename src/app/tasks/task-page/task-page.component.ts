@@ -93,13 +93,13 @@ export class TaskPageComponent {
 
   getError(id: string): string | undefined {
     if(this.form.touched) {
-      var errors: any = this.form.get(id)?.errors;
+      const errors = this.form.get(id)?.errors;
 
-      if(errors?.max) {
-        return `Der Wert darf maximal ${errors?.max.max} sein.`;
+      if(errors?.['max']) {
+        return `Der Wert darf maximal ${errors?.['max'].max} sein.`;
       }
 
-      if(errors?.required) {
+      if(errors?.['required']) {
         return `Pflichtfeld`;
       }
     }

@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+/**
+ * Das wichtigste Modul. Hier werden u.a. Komponenten dekalriert und andere Module importiert.
+ */
 @NgModule({
   declarations: [
     AppComponent,

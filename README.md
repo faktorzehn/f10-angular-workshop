@@ -1,6 +1,8 @@
-# PiratenApp
+# Angular Workshop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
+This is a code sample for the Angular Workshop. The code is intended for learning and practice purposes only.
+
+An Angular app is developed in 8 chapters. It is a todo app for pirates. You can plan your next task and specify the gold you will capture. Of course you can sort by the gold - gold is the most important thing for pirates.
 
 ## Development server
 

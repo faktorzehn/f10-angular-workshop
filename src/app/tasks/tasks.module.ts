@@ -10,6 +10,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 
 
+/**
+ * In unserem Beispiel verwenden wir ein Feature Modul 'Tasks'. Hier werden die dafür relevanten Komponenten deklariert, Module importiert etc.
+ */
 @NgModule({
   declarations: [
     TaskListPageComponent,
@@ -19,7 +22,7 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    TasksRoutingModule,
+    TasksRoutingModule, // wichtig damit die Teil-Routen importiert werden
     ReactiveFormsModule,
     SharedModule
   ]
